@@ -1,0 +1,132 @@
+Format styles:
+% : column
+% : N_observations : column
+
+================================================================================
+Filter columns that don't accurately represent fair market price or a typical sale:
+================================================================================
+1.8809: ValidationDescription_Buyer/Seller are related parties or corporate entities
+0.0044: ValidationDescription_Buyer/Seller is a Non-Profit institution
+0.5114: ValidationDescription_More than five (5) parcels being sold
+0.0022: ValidationDescription_Sale includes quantifiable Personal Property > 5%
+0.0132: ValidationDescription_Sale includes unquantifiable Personal Property > 5%
+0.0132: ValidationDescription_Sale involves exchange or trade
+0.2305: ValidationDescription_Sale price missing
+0.0044: ValidationDescription_Sale pursuant to a court order
+1.3278: ValidationDescription_Sale to or from a government agency
+8.0548: ValidationDescription_Sale under duress
+0.4653: ValidationDescription_Suspicious Sale
+0.0066: ValidationDescription_Unsecured Mobile Home
+0.1514: ValidationDescription_Unusable sale which does not fit any other reject codes
+0.0022: ValidationDescription_Trust sale of nominal consideration or convenience
+0.0022: ValidationDescription_Sale of convenience for nominal consideration
+0.0025 : 1 : personalproperty_yes
+0.0375 : 15 : deed_quit claim deed
+0.0551 : 22 : buyersellerrelated_yes
+0.1101 : 44 : partialinterest_yes
+20.1952 : 8068 : financing_cash
+
+observations w/ longitude < -112: it seems they are on an Indian Reservation and represent a small subset of the data
+
+observations w/ rooms == 99: an outdated metric that does not actually reflect the number of rooms
+
+================================================================================
+Ignoring columns that are not not important predictive features:
+================================================================================
+29.6864: ValidationDescription_Buyer/Seller has an Out-Of-State Address
+0.0154: ValidationDescription_Correction of previously recorded deed
+56.2145: ValidationDescription_Good Sale
+0.0022: ValidationDescription_Internet sale
+0.0110: ValidationDescription_Improvements not yet on assessment roll
+0.0088: ValidationDescription_Name/Address of Buyer or Seller is missing
+0.0044: ValidationDescription_Payoff of Land contract
+0.3073: ValidationDescription_Property altered since date of sale
+0.0263: ValidationDescription_Property type/use code are not consistent
+0.1032: ValidationDescription_Sale of partial interest
+0.0154: ValidationDescription_Split legislative class/assessment ratio
+
+================================================================================
+Ignoring columns that are not represented -- don't want to stratify data --
+================================================================================
+0.0000 : 0 : heat_2.0
+0.0025 : 1 : deed_contract or agreement
+0.0050 : 2 : roof_5.0
+0.0125 : 5 : heat_3.0
+0.0200 : 8 : cool_9.0
+0.0426 : 17 : heat_9.0
+0.0451 : 18 : heat_4.0
+0.0501 : 20 : heat_0.0
+99.8899 : 39906 : partialinterest_no
+99.9449 : 39928 : buyersellerrelated_no
+
+================================================================================
+Ignoring columns that are almost entirely populated with nan
+================================================================================
+column  : fraction
+landfcv : 0.9988
+age     : 1.0000
+
+================================================================================
+Maybe Ignore:
+================================================================================
+0.1552 : 62 : intendeduse_unknown
+0.1752 : 70 : deed_other
+1.3992 : 559 : deed_joint tenancy deed
+7.6095 : 3040 : intendeduse_nonprimary
+79.8048 : 31882 : financing_other
+85.9024 : 34318 : intendeduse_primaryres
+
+================================================================================
+Categorical Data -- IN USE --
+Percentage : N_observations : Category
+================================================================================
+0.0534 : 17 : walls_5.0
+0.0879 : 28 : class_1.0
+0.1036 : 33 : solar_yes
+0.1099 : 35 : heat_7.0
+0.1256 : 40 : intendeduse_unknown
+0.1569 : 50 : class_6.0
+0.1601 : 51 : deed_other
+0.1821 : 58 : walls_1.0
+0.2417 : 77 : walls_8.0
+0.2480 : 79 : heat_5.0
+0.2511 : 80 : roof_8.0
+0.2574 : 82 : lives_in_state
+0.2982 : 95 : roof_6.0
+0.3673 : 117 : cool_2.0
+0.3892 : 124 : roof_0.0
+0.4520 : 144 : lives_out_of_state
+0.5744 : 183 : roof_2.0
+0.7408 : 236 : heat_8.0
+0.7879 : 251 : lives_in_city
+1.0327 : 329 : garage_6.0
+1.5067 : 480 : deed_joint tenancy deed
+1.8488 : 589 : heat_6.0
+2.1627 : 689 : class_2.0
+2.4578 : 783 : class_5.0
+3.4403 : 1096 : intendeduse_rental
+4.7523 : 1514 : intendeduse_nonprimary
+5.2671 : 1678 : walls_3.0
+5.4335 : 1731 : walls_7.0
+5.4523 : 1737 : roof_7.0
+6.1931 : 1973 : walls_2.0
+7.7971 : 2484 : garage_9.0
+8.0514 : 2565 : walls_4.0
+11.1589 : 3555 : walls_6.0
+17.0726 : 5439 : patio_9.0
+21.1281 : 6731 : garage_3.0
+21.9945 : 7007 : roof_1.0
+22.4245 : 7144 : cool_1.0
+25.9778 : 8276 : class_4.0
+32.1458 : 10241 : roof_3.0
+38.8913 : 12390 : roof_4.0
+63.4189 : 20204 : walls_0.0
+69.1569 : 22032 : class_3.0
+70.0421 : 22314 : garage_1.0
+77.1894 : 24591 : cool_0.0
+82.9274 : 26419 : patio_3.0
+91.6818 : 29208 : intendeduse_primaryres
+96.9270 : 30879 : heat_1.0
+98.3301 : 31326 : deed_warranty deed
+98.5027 : 31381 : lives_at_res
+99.8964 : 31825 : solar_no

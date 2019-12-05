@@ -1,0 +1,6 @@
+model, R^2
+random forest, 0.893
+FFNN, 0.871
+kNN with L1-Regularization, 0.859
+linear regression with GRB, 0.63
+linear regression with sqft^2/rooms^2/pool^2 , 0.495
